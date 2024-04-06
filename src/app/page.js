@@ -1,4 +1,5 @@
 import { Dashboard } from '@/components/Dashboard'
+import { cookies } from 'next/headers'
 
 export default async function Home() {
   const res = await fetch(`http://localhost:3000/getAll`, {
@@ -12,7 +13,11 @@ export default async function Home() {
     },
   })
 
+  const cookieStore = cookies()
+  const admin_access = cookieStore.getAll()
   const body = await res.json()
   console.log('response in page.js:' + JSON.stringify(body))
+  console.log('Admin access:' + JSON.stringify(admin_access))
+  //TODO: destruct=>  variables for maps
   return <Dashboard />
 }
