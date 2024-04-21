@@ -19,5 +19,5 @@ export default async function Home() {
   console.log('response in page.js:' + JSON.stringify(body))
   console.log('Admin access:' + JSON.stringify(admin_access))
   //TODO: destruct=>  variables for maps
-  return <Dashboard />
+  return <Dashboard transcripts={body} />
 }
