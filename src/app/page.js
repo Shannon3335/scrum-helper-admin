@@ -2,7 +2,7 @@ import { Dashboard } from '@/components/Dashboard'
 import { cookies } from 'next/headers'
 
 export default async function Home() {
-  const res = await fetch(`http://localhost:3000/getAll`, {
+  const res = await fetch(`http://18.235.151.54:3010/getAll`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
